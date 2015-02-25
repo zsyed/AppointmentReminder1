@@ -1,0 +1,45 @@
+﻿<form class="form-horizontal" name="profileForm">
+    <fieldset>
+        <legend>Profile Information</legend>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="inputprofileFirstName">First Name</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       type="text"
+                       placeholder="First Name"
+                       data-ng-model="vm.profile.FirstName" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="inputprofilePhoneNumber">Phone Number</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       type="text"
+                       ui-mask="(999) 999 - 9999"
+                       data-ng-model="vm.profile.PhoneNumber" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            data-ng-click="vm.submit()">
+                        Save
+                    </button>
+                </span>
+
+                <span>
+                    <button class="btn btn-primary"
+                            data-ng-click="vm.cancel()">
+                        Cancel
+                    </button>
+                </span>
+
+            </div>
+
+        </div>
+
+    </fieldset>
+</form>

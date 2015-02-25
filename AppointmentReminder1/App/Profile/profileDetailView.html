@@ -1,0 +1,49 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">{{vm.title}}</div>
+
+    <div data-ng-hide="vm.profile.Id != null">
+        <div class="panel-footer">
+            <a class="btn btn-primary" ui-sref="profileEdit({profileId: 0})">Create New Profile</a>
+        </div>
+
+    </div>
+
+    <div data-ng-show="vm.profile.Id != null">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-2">First Name:</div>
+                        <div class="col-md-6">{{vm.profile.FirstName}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">Last Name:</div>
+                        <div class="col-md-6">{{vm.profile.LastName}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">Phone Number:</div>
+                        <div class="col-md-6">{{vm.profile.PhoneNumber}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">Email Address:</div>
+                        <div class="col-md-6">{{vm.profile.EmailAddress}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="center-block img-responsive"
+                             ng-src="{{vm.profile.imageUrl}}"
+                             title="{{vm.profile.FirstName}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <a class="btn btn-primary"
+               ui-sref="profileEdit({profileId: vm.profile.Id})">
+
+                Edit
+            </a>
+
+        </div>
+    </div>
+ </div>

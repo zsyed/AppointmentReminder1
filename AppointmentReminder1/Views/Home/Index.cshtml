@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head >
+    <meta charset="utf-8" />
+    <title>Application name goes here.</title>
+
+    @*Style Sheets*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
+
+    @*Library Scripts*@
+    <script src="~/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/angular-mocks.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-utils.min.js"></script>
+    <script src="~/Scripts/toastr.min.js"></script>
+
+    @*Application Scripts*@
+    <script src="~/App/MainModule/MainModule.js"></script>
+
+    @*Services*@
+    <script src="~/App/common/services/common.services.js"></script>
+
+        @*Contact*@
+        <script src="~/App/common/services/Contact/contactResource.js"></script>
+        <script src="~/App/common/services/Contact/contactService.js"></script>
+        <script src="~/App/common/services/Contact/contactsResource.js"></script>
+        <script src="~/App/common/services/Contact/contactsResourceMock.js"></script>
+
+        @*Profile*@
+        <script src="~/App/common/services/Profile/profileResource.js"></script>
+        <script src="~/App/common/services/Profile/profilesResourceMock.js"></script>
+        <script src="~/App/common/services/Profile/profileService.js"></script>
+
+
+
+    @*Controllers*@
+        @*Contact*@
+        <script src="~/App/Contacts/contactListCtrl.js"></script>
+        <script src="~/App/Contacts/contactDetailCtrl.js"></script>
+        <script src="~/App/Contacts/contactEditCtrl.js"></script>
+
+        @*Profile*@ 
+        <script src="~/App/Profile/profileDetailCtrl.js"></script>
+        <script src="~/App/Profile/profileEditCtrl.js"></script>
+        
+</head>
+<body data-ng-app="appointmentReminderModule">
+            <nav class="navbar navbar-inverse ">
+                <div class="container">
+                    <a class="navbar-brand" ui-sref="home" >Appointment Reminder</a>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a ui-sref="profileDetail({profileId: {{1}}})">Profile</a></li>
+                            <li><a ui-sref="contactList">Contacts</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+    <div class="container">
+            <div data-ui-view>
+
+            </div>
+        </div>
+</body>
+</html>

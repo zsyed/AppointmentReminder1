@@ -1,0 +1,45 @@
+﻿
+<div class="panel panel-primary">
+
+    <div class="panel-body" data-ng-show="vm.contacts.profile.Id == null">
+        <span>Please create a new profile first and then create contact.</span>
+    </div>
+
+    <div class="panel-body" data-ng-show="vm.contacts.profile.Id != null">
+        <a class="btn btn-primary" ui-sref="contactEdit({contactId: 0})">Create New Contact</a>
+    </div>
+
+    <div data-ng-hide="vm.contacts.length == 0">
+        <div class="panel-body">
+
+            <div class="panel-heading">Contacts List</div>
+
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>First Name</td>
+                            <td>Phone Number</td>
+                            <td>Email Address</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="contact in vm.contacts">
+                            <td>
+                                <a ui-sref="contactDetail({contactId: contact.Id})">
+                                    {{contact.FirstName}}
+                                </a>
+                            </td>
+                            <td>{{contact.FirstName}}</td>
+                            <td>{{contact.PhoneNumber}}</td>
+                            <td>{{contact.EmailAddress}}</td>
+                            <td>
+                                <a class="btn btn-primary" ui-sref="contactEdit({contactId: contact.Id})">Edit</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
