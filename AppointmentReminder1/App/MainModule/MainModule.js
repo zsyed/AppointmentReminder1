@@ -3,6 +3,7 @@
                                     ['common.services',
                                     'ui.router',
                                     'ui.mask',
+                                    'remindersResourceMock',
                                     'profilesResourceMock',
                                     'contactsResourceMock']);
 

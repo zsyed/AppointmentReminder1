@@ -219,6 +219,8 @@
     <Content Include="App\common\services\Profile\profileResource.js" />
     <Content Include="App\common\services\Profile\profileService.js" />
     <Content Include="App\common\services\Profile\profilesResourceMock.js" />
+    <Content Include="App\common\services\Reminder\remindersResource.js" />
+    <Content Include="App\common\services\Reminder\remindersResourceMock.js" />
     <Content Include="App\Contacts\contactDetailCtrl.js" />
     <Content Include="App\Contacts\contactEditCtrl.js" />
     <Content Include="App\Contacts\contactEditView.html" />
@@ -230,6 +232,8 @@
     <Content Include="App\Profile\profileDetailView.html" />
     <Content Include="App\Profile\profileEditCtrl.js" />
     <Content Include="App\Profile\profileEditView.html" />
+    <Content Include="App\Reminders\reminderListCtrl.js" />
+    <Content Include="App\Reminders\reminderListView.html" />
     <Content Include="App\welcomeView.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />

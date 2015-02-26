@@ -1,0 +1,44 @@
+﻿
+<div class="panel panel-primary">
+
+    <div class="panel-body" data-ng-show="vm.reminders.contact.Id == null">
+        <span>Please create a new contact first and then create reminder.</span>
+    </div>
+
+    <div class="panel-body" data-ng-show="vm.reminders.contact.Id != null">
+        <a class="btn btn-primary" ui-sref="reminderEdit({reminderId: 0})">Create New reminder</a>
+    </div>
+
+    <div data-ng-hide="vm.reminders.length == 0">
+        <div class="panel-body">
+
+            <div class="panel-heading">Reminders List</div>
+
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>First Name</td>
+                            <td>Message</td>
+                            <td>Date</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="reminder in vm.reminders">
+                            <td>
+                                <a ui-sref="reminderDetail({reminderId: reminder.Id})">
+                                    {{reminder.FirstName}}
+                                </a>
+                            </td>
+                            <td>{{reminder.Message}}</td>
+                            <td>{{reminder.Date}}</td>
+                            <td>
+                                <a class="btn btn-primary" ui-sref="reminderEdit({reminderId: reminder.Id})">Edit</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
