@@ -43,6 +43,8 @@
 
 
     @*Controllers*@
+        <script src="~/App/common/controllers/indexCtrl.js"></script>
+
         @*Contact*@
         <script src="~/App/Contacts/contactListCtrl.js"></script>
         <script src="~/App/Contacts/contactDetailCtrl.js"></script>
@@ -55,8 +57,9 @@
 </head>
 <body data-ng-app="appointmentReminderModule">
             <nav class="navbar navbar-inverse ">
-                <div class="container">
-                    <a class="navbar-brand" ui-sref="home" >Appointment Reminder</a>
+                <div class="container" data-ng-controller="indexCtrl">
+                    <a class="navbar-brand" ui-sref="home">Appointment Reminder</a>
+                    
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
@@ -68,7 +71,8 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li><a ui-sref="profileDetail({profileId: {{1}}})">Profile</a></li>
-                            <li><a ui-sref="contactList">Contacts</a></li>
+                            <li data-ng-show="profileExists()"><a ui-sref="contactList">Contacts</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -81,3 +85,4 @@
         </div>
 </body>
 </html>
+@*<li><a ui-sref="contactList">{{profileExists()}}</a></li>*@
