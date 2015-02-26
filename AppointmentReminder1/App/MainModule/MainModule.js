@@ -58,6 +58,20 @@
            })
 
         $stateProvider
+           .state("reminderEdit", {
+               url: "/reminders/edit/:reminderId",
+               templateUrl: "App/Reminders/reminderEditView.html",
+               controller: "reminderEditCtrl as vm",
+               resolve: {
+                   reminderResource: "reminderResource",
+                   reminder: function (reminderResource, $stateParams) {
+                       var reminderId = $stateParams.reminderId;
+                       return reminderResource.get({ reminderId: reminderId }).$promise;
+                   }
+               }
+           })
+
+        $stateProvider
            .state("profileDetail", {
                url: "/profiles/:profileId",
                templateUrl: "App/Profile/profileDetailView.html",

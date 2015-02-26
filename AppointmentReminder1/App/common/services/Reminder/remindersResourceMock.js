@@ -42,19 +42,28 @@
                     reminder.Id = 1;
                     reminders.push(reminder);
                 }
-                else if (!reminder.Id || reminders.length > 0)
-                {
-                    reminder.Id = reminders[reminders.length - 1].Id + 1;
-                    reminders.push(reminder);
-                }
+                //else if (!reminder.Id || reminders.length > 0)
+                //{
+                //    reminder.Id = reminders[reminders.length - 1].Id + 1;
+                //    reminders.push(reminder);
+                //}
                 else
                 {
+                    var recordFound = false;
+
                     for (var i = 0; i < reminders.length; i++) {
                         if (reminders[i].Id == reminder.Id) {
                             reminders[i] = reminder;
+                            recordFound = true;
                             break;
                         }
                     };
+
+                    if (recordFound == false)
+                    {
+                        reminder.Id = reminders[reminders.length - 1].Id + 1;
+                        reminders.push(reminder);
+                    }
                 }
                 return [200, reminder, {}];
             });
