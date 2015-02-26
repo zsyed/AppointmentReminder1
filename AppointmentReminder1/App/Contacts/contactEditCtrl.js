@@ -1,9 +1,9 @@
 ﻿(function () {
     angular
         .module("appointmentReminderModule")
-        .controller("contactEditCtrl", ["contact", "$state", contactEditCtrl]);
+        .controller("contactEditCtrl", ["contact", "$state", "contactService", contactEditCtrl]);
 
-    function contactEditCtrl(contact, $state) {
+    function contactEditCtrl(contact, $state, contactService) {
         var vm = this;
         vm.contact = contact;
 
@@ -18,6 +18,7 @@
         vm.submit = function () {
             vm.contact.$save();
             toastr.success('Saved successfully. hoo hoo.');
+            contactService.setContact(contact);
         }
 
         vm.cancel = function () {

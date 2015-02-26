@@ -1,32 +1,23 @@
 ﻿(function () {
     angular
             .module("common.services")
-            .factory("contactService", contactService);
+            .factory("contactService", [contactService]);
 
     function contactService() {
 
         var vm = this;
-        
-        //return {
-        //    calcAdd: calcAdd,
-        //    calcMultiply: calcMultiply
-        //}
 
-        //function calcAdd(num1, num2) {
-        //    return num1 + num2;
-        //}
-
-        //function calcMultiply(num1, num2) {
-        //    return num1 * num2;
-        //}
-
-        function setContacts(contacts)
-        {
-            vm.contacts = contacts
+        return {
+            setContact: setContact,
+            getContact: getContact
         }
 
-        function getContacts() {
-            return vm.contacts;
+        function setContact(contact) {
+            vm.contact = contact;
+        }
+
+        function getContact() {
+            return vm.contact;
         }
 
     }

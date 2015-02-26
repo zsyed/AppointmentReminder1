@@ -22,6 +22,13 @@
 
            })
         $stateProvider
+           .state("reminderList", {
+               url: "/reminders",
+               templateUrl: "App/Reminders/reminderListView.html",
+               controller: "reminderListCtrl as vm"
+
+           })
+        $stateProvider
            .state("contactEdit", {
                url: "/contacts/edit/:contactId",
                templateUrl: "App/Contacts/contactEditView.html",
