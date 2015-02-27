@@ -2,13 +2,17 @@
     var app = angular
                     .module("contactsResourceMock",
                         ["ngMockE2E"]);
-    app.run(function ($httpBackend) {
+    app.run(function ($httpBackend, contactService) {
         var contacts = [
             { "Id": 1, "FirstName": "Zulfiqar", "LastName": "Syed", "PhoneNumber": "7145551212", "EmailAddress": "datfagdig@gmail.com", "TimeZone": "Pacific Standard Time", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
             { "Id": 2, "FirstName": "Faisal", "LastName": "Syed", "PhoneNumber": "714-555-1313", "EmailAddress": "faisal@gmail.com", "TimeZone": "Central Standard Time", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
             { "Id": 3, "FirstName": "Sobia", "LastName": "Syed", "PhoneNumber": "714-555-1414", "EmailAddress": "sobia@gmail.com", "TimeZone": "Mountain Standard Time", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
         ];
-         var contacts = [];
+
+        if (contacts.length > 0) {
+            contactService.setContact(contacts[0]);
+        }
+
         var contactUrl = "/api/contacts"
         $httpBackend.whenGET(contactUrl).respond(contacts);
 

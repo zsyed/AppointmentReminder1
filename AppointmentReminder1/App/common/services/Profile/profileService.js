@@ -13,13 +13,19 @@
         }
 
         function setProfile(profile) {
-            vm.profile = profile;
+            if (profile != null && profile.Id > 0)
+            {
+                vm.profile = profile;
+            }
+            
         }
 
         function getProfile() {
-            return vm.profile;
+            if (vm.profile != null && vm.profile.Id > 0)
+            {
+                return vm.profile;
+            }
         }
-
     }
 
 }());

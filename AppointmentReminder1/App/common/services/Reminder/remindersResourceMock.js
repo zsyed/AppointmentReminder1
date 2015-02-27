@@ -8,7 +8,6 @@
             { "Id": 2, "FirstName": "Sobia", "Message": "Good morning", "Date": "2/12/2013", "Time": "7:22 AM" },
             { "Id": 3, "FirstName": "Faisal", "Message": "Good night", "Date": "3/13/2011", "Time": "8:30 PM" },
         ];
-         var reminders = [];
         var reminderUrl = "/api/reminders"
         $httpBackend.whenGET(reminderUrl).respond(reminders);
 

@@ -13,11 +13,17 @@
         }
 
         function setContact(contact) {
-            vm.contact = contact;
+            if (contact != null && contact.Id > 0)
+            {
+                vm.contact = contact;
+            }
         }
 
         function getContact() {
-            return vm.contact;
+            if (vm.contact != null && vm.contact.Id > 0)
+            {
+                return vm.contact;
+            }
         }
 
     }
