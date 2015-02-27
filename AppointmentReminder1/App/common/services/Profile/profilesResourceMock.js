@@ -3,13 +3,13 @@
                     .module("profilesResourceMock",
                         ["ngMockE2E"]);
     app.run(function ($httpBackend) {
-        //var profiles = [
-        //    { "Id": 1, "FirstName": "ZulfiqarP", "LastName": "Syed", "PhoneNumber": "7145551212", "EmailAddress": "datfagdig@gmail.com", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
-        //    { "Id": 2, "FirstName": "FaisalP", "LastName": "Syed", "PhoneNumber": "714-555-1313", "EmailAddress": "faisal@gmail.com", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
-        //    { "Id": 3, "FirstName": "SobiaP", "LastName": "Syed", "PhoneNumber": "714-555-1414", "EmailAddress": "sobia@gmail.com", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
-        //];
+        var profiles = [
+            { "Id": 1, "FirstName": "ZulfiqarP", "LastName": "Syed", "PhoneNumber": "7145551212", "EmailAddress": "datfagdig@gmail.com", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" }
+            //{ "Id": 2, "FirstName": "FaisalP", "LastName": "Syed", "PhoneNumber": "714-555-1313", "EmailAddress": "faisal@gmail.com", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
+            //{ "Id": 3, "FirstName": "SobiaP", "LastName": "Syed", "PhoneNumber": "714-555-1414", "EmailAddress": "sobia@gmail.com", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
+        ];
 
-        var profiles = [];
+        //var profiles = [];
         var profileUrl = "/api/profiles"
         $httpBackend.whenGET(profileUrl).respond(profiles);
 

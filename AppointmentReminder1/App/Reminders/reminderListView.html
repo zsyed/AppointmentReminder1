@@ -21,6 +21,7 @@
                             <td>First Name</td>
                             <td>Message</td>
                             <td>Date</td>
+                            <td>Time</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +33,7 @@
                             </td>
                             <td>{{reminder.Message}}</td>
                             <td>{{reminder.Date}}</td>
+                            <td>{{reminder.Time | date:'shortTime'}}</td>
                             <td>
                                 <a class="btn btn-primary" ui-sref="reminderEdit({reminderId: reminder.Id})">Edit</a>
                             </td>

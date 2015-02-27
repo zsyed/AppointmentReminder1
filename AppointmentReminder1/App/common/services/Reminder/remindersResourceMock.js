@@ -3,12 +3,12 @@
                     .module("remindersResourceMock",
                         ["ngMockE2E"]);
     app.run(function ($httpBackend) {
-        //var reminders = [
-        //    { "Id": 1, "FirstName": "Zulfiqar", "LastName": "Syed", "PhoneNumber": "7145551212", "EmailAddress": "datfagdig@gmail.com", "TimeZone": "Pacific Standard Time", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
-        //    { "Id": 2, "FirstName": "Faisal", "LastName": "Syed", "PhoneNumber": "714-555-1313", "EmailAddress": "faisal@gmail.com", "TimeZone": "Central Standard Time", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
-        //    { "Id": 3, "FirstName": "Sobia", "LastName": "Syed", "PhoneNumber": "714-555-1414", "EmailAddress": "sobia@gmail.com", "TimeZone": "Mountain Standard Time", "imageUrl": "http://cdn.wegotthiscovered.com/wp-content/uploads/darkknight_3_dark-knight-rises1.jpg" },
-        //];
-        var reminders = [];
+        var reminders = [
+            { "Id": 1, "FirstName": "Zulfiqar", "Message": "Hello There ", "Date": "1/11/2014", "Time": "6:20 AM" },
+            { "Id": 2, "FirstName": "Sobia", "Message": "Good morning", "Date": "2/12/2013", "Time": "7:22 AM" },
+            { "Id": 3, "FirstName": "Faisal", "Message": "Good night", "Date": "3/13/2011", "Time": "8:30 PM" },
+        ];
+         var reminders = [];
         var reminderUrl = "/api/reminders"
         $httpBackend.whenGET(reminderUrl).respond(reminders);
 
@@ -42,11 +42,6 @@
                     reminder.Id = 1;
                     reminders.push(reminder);
                 }
-                //else if (!reminder.Id || reminders.length > 0)
-                //{
-                //    reminder.Id = reminders[reminders.length - 1].Id + 1;
-                //    reminders.push(reminder);
-                //}
                 else
                 {
                     var recordFound = false;

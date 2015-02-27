@@ -24,11 +24,30 @@
         <div class="form-group">
             <label class="col-md-2 control-label">Date</label>
             <div class="col-md-4">
-                <input class="form-control"
-                       type="date"
-                       data-ng-model="vm.reminder.Date" />
+                <div class="input-group">
+                    <input class="form-control"
+                           type="text"
+                           datepicker-popup="MM/dd/yyyy"
+                           is-open="vm.opened" ;
+                           data-ng-model="vm.reminder.Date" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" data-ng-click="vm.open($event)">
+                            <i class="glyphicon glyphicon-calendar" />
+                        </button>
+                    </span>
+                </div>
             </div>
         </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">Time</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <timepicker data-ng-model="vm.reminder.Time" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                </div>
+            </div>
+        </div>
+
 
 
         <div class="form-group">

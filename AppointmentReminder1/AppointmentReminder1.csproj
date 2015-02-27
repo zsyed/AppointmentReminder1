@@ -212,6 +212,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\common\controllers\indexCtrl.js" />
+    <Content Include="App\common\controllers\TimepickerCtrl.js" />
     <Content Include="App\common\services\Contact\contactResource.js" />
     <Content Include="App\common\services\Contact\contactService.js" />
     <Content Include="App\common\services\Contact\contactsResource.js" />
